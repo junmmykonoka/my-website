@@ -1,0 +1,41 @@
+body {
+    background-color: #f0f8ff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: #4682b4;
+}
+
+p {
+    color: #333;
+}
+
+img {
+    width: 300px; /* 幅を300ピクセルに設定 */
+    height: auto; /* 高さは自動調整（縦横比を維持） */
+}
+
+/* ここから独立した新しいスタイル */
+.small-image {
+    width: 200px;
+    height: auto;
+}
+.slideshow-container {
+    max-width: 500px;
+    position: relative;
+    margin: auto;
+}
+
+.mySlides {
+    width: 100%;
+    display: none; /* 初期状態ではすべての画像を非表示に */
+}
+/* 既存のスタイル... */
+
+footer {
+    font-size: 14px; /* フォントサイズを小さくする */
+    color: #555; /* 文字の色を少し薄くする */
+    margin-top: 50px; /* 上のコンテンツとの間にスペースを作る */
+}
