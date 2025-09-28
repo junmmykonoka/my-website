@@ -73,8 +73,10 @@
         </header>
 
         <!-- メインの画像 (prog.jpg) -->
-        <h2 class="text-2xl font-semibold text-center mt-10 mb-4 text-blue-700">私のスキルを示す写真</h2>
-        <img src="images/MyJob.jpg" alt="プログラミング関連の写真" class="content-media img-large mx-auto" ... >
+               <h2 class="text-2xl font-semibold text-center mt-10 mb-4 text-blue-700">私のスキルを示す写真</h2>
+        <!-- ★★★ 修正箇所: src="images/myjob.jpg" に変更しました (完全に小文字) ★★★ -->
+        <img src="images/myjob.jpg" alt="プログラミング関連の写真" class="content-media img-large mx-auto"
+             onerror="console.error('【重要】myjob.jpg の読み込みエラー。ファイル名（myjob.jpg, MyJob.jpg）、大文字/小文字、またはフォルダパス（images/）を確認してください。');">
 
         <!-- スキル紹介セクション -->
         <section class="mt-16 text-left">
