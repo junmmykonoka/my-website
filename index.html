@@ -129,19 +129,17 @@
         <section class="mt-16 text-center border-t pt-8">
             <h2 class="text-3xl font-bold text-gray-800 mb-6">最近の入手物</h2>
             
-            <h3 class="text-xl font-semibold text-gray-700 mt-8">DJ勉強中</h3>
-            <!-- video-smallクラスで最大幅400pxが適用されます -->
-            <video controls class="content-media video-small mx-auto">
-                <source src="kyun.mp4" type="video/mp4">
-                お使いのブラウザは動画タグをサポートしていません。
-            </video>
-                
-            <h3 class="text-xl font-semibold text-gray-700 mt-8">昨日購入したおもちゃ</h3>
-            <!-- video-smallクラスで最大幅400pxが適用されます -->
-            <video controls class="content-media video-small mx-auto">
-                <source src="light.mp4" type="video/mp4">
-                お使いのブラウザは動画タグをサポートしていません。
-            </video>
+        <h3 class="text-xl font-semibold text-gray-700 mt-8">DJ勉強中</h3>
+<video controls class="content-media video-small mx-auto" autoplay loop muted>
+    <source src="kyun.mp4" type="video/mp4">
+    お使いのブラウザは動画タグをサポートしていません。
+</video>
+    
+<h3 class="text-xl font-semibold text-gray-700 mt-8">昨日購入したおもちゃ</h3>
+<video controls class="content-media video-small mx-auto" onerror="console.error('【重要】light.mp4 の読み込みエラー。ファイル名と場所を確認してください。');" autoplay loop muted>
+    <source src="light.mp4" type="video/mp4">
+    お使いのブラウザは動画タグをサポートしていません。
+</video>
         </section>
         
         <!-- フッター -->
