@@ -3,91 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>junmmyの仕事依頼サイト</title>
+    <title>junmmyのお仕事依頼ウェブサイト</title>
+    <!-- Tailwind CSS CDNを読み込み -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* ここでimg要素に対するスタイルを指定します */
-        img {
-            /* 最大幅を600ピクセルに設定（好きなサイズに変更できます） */
-            max-width: 10000px;
-            /* 幅に合わせて高さを自動で調整し、縦横比を保ちます */
-            height: auto;
-            /* 画像を画面の中央に配置します */
+        /* ---------------------------------------------------- */
+        /* カスタムスタイル定義 */
+        /* ---------------------------------------------------- */
+
+        /* 画像、動画の中央配置とレスポンシブ設定 */
+        .content-media {
             display: block;
-            margin: 100px auto;
+            width: 100%;
+            height: auto;
+            margin: 40px auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
+
+        /* prog.jpg (大きめ) のスタイル */
+        .img-large {
+            max-width: 800px; /* 画像の最大幅を800pxに設定 */
+            border: 4px solid #3b82f6;
+        }
+
+        /* kyun.mp4, light.mp4 (小さめ) のスタイル */
+        .video-small {
+            max-width: 400px; /* 動画の最大幅を400pxに設定 (スマホサイズ) */
+            border: 4px solid #f97316; /* オレンジの枠線で区別 */
+        }
+        
+        /* すべての動画要素に再生コントロールを適用 */
+        video {
+            object-fit: contain; /* 動画が枠内に収まるように調整 */
+        }
+
+        /* スライドショーコンテナ（今回は横並び表示に変更） */
+        .slideshow-container {
+            display: flex;
+            flex-wrap: wrap; /* 小さい画面で折り返す */
+            gap: 16px;
+            justify-content: center;
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+        .mySlides {
+            width: 100%; /* モバイルでは100% */
+            max-width: 250px; /* PCでの最大幅 */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+        }
+        /* PC画面では画像を横に並べる */
+        @media (min-width: 640px) {
+            .mySlides {
+                width: calc(33.33% - 16px);
+            }
+        }
+
     </style>
 </head>
-<body>
-    <h1>junmmyのお仕事依頼ウェブサイト</h1>
-    <p>GitHubで作ったページです</p>
-    <img src="prog.jpg" alt="写真">
+<body class="p-4 sm:p-8 bg-gray-50 font-sans text-gray-700">
 
-    <h2>VBAはほとんど何でもできます</h2>
-    <h2>（エクセルの自動操作）</h2>
-  　<h2>WEBページもこの通り、なんとなくできそうです</h2>
-    <h2>AIについても、基本的な知識や</h2>
-    </h2>最先端の情報は更新しているつもりです</h2>
-    
-　　 <h2>なぜこうなったとお話すると、会社での改善活動でデジタル化を進めるべく <h2>
-     <h2>模索している中でこうなってしまいました</h2>
-    
-    <h2>最近チャットアプリ（そこそこ）開発しましたがレンタルサーバ契約の関係で消えました</h2>
-    <h2>ただ、経験は残りました</h2>
-    <p>
-        詳しくは<a href="https://chat-app-oyro.onrender.com/">チャットアプリについて</a>RENDERが立ち上がると思います（もう動かないです）
-    </p>
+    <div class="max-w-5xl mx-auto bg-white p-6 sm:p-12 rounded-3xl shadow-2xl">
+        
+        <header class="text-center mb-10 border-b pb-6">
+            <h1 class="text-5xl font-extrabold text-gray-900 mb-2 tracking-tight">junmmyのお仕事依頼ウェブサイト</h1>
+            <p class="text-xl text-gray-500 font-medium">GitHubで作ったページです</p>
+        </header>
 
-    <h2>その知識でもってこのページを作成しました</h2>
+        <!-- メインの画像 (prog.jpg) -->
+        <h2 class="text-2xl font-semibold text-center mt-10 mb-4 text-blue-700">私のスキルを示す写真</h2>
+        <img src="prog.jpg" alt="プログラミング関連の写真" class="content-media img-large mx-auto">
 
-　　  <h1>そこで、お題があると非常に開発し易く</h1>
-　　　<h1>また、自分の経験になればとこのサイトを作成しました</h1>
-    　<h1>（要するに、何かお仕事ください）</h1>
+        <!-- スキル紹介セクション -->
+        <section class="mt-16 text-left">
+            <h2 class="text-3xl font-bold text-gray-800 border-b pb-2 mb-6">私の技術分野</h2>
+            
+            <div class="space-y-4 text-lg leading-relaxed">
+                <p class="font-bold text-xl text-green-700">VBAはほとんど何でもできます（エクセルの自動操作）</p>
+                <p class="font-bold text-xl text-orange-700">WEBページもこの通り、なんとなくできそうです</p>
+                <p class="font-bold text-xl text-purple-700">AIについても、基本的な知識や最先端の情報は更新しているつもりです</p>
+            </div>
+            
+            <h3 class="text-xl font-semibold mt-10 mb-4 text-gray-800 border-t pt-4">開発の動機</h3>
+            <p class="text-lg">なぜこうなったとお話すると、会社での改善活動でデジタル化を進めるべく模索している中でこうなってしまいました。</p>
+            
+            <h3 class="text-xl font-semibold mt-8 mb-4 text-gray-800">開発経験</h3>
+            <p class="text-lg">最近チャットアプリ（そこそこ）開発しましたが、レンタルサーバー契約の関係で消えました。ただ、経験は残りました。</p>
+            <p class="text-lg mt-2">詳しくは、<a href="https://chat-app-oyro.onrender.com/" target="_blank" class="text-blue-600 hover:text-blue-800 underline font-medium transition duration-150">チャットアプリについて</a>のリンクをご覧ください（RENDERが立ち上がると思いますが、もう動かないです）。</p>
+            
+            <p class="text-lg mt-8">その知識でもってこのページを作成しました。</p>
 
-    <p>全く関係のない画像</p>
-    
-    <div class="slideshow-container">
-        <img class="mySlides" src="images/matuda2.jpg">
-        <img class="mySlides" src="images/matuda3.jpg">
-        <img class="mySlides" src="images/matuda7.jpg">
+            <div class="text-center mt-12 p-6 bg-yellow-50 rounded-lg border-2 border-yellow-200">
+                <h1 class="text-4xl font-extrabold text-red-600 mb-4 tracking-tight">そこで、お題があると非常に開発し易く</h1>
+                <h1 class="text-4xl font-extrabold text-red-600 mb-4 tracking-tight">また、自分の経験になればとこのサイトを作成しました</h1>
+                <h1 class="text-4xl font-extrabold text-red-600 mb-0 tracking-tight">（要するに、何かお仕事ください）</h1>
+            </div>
+        </section>
+
+        <!-- AIレポート紹介セクション -->
+        <section class="mt-16 text-left border-t pt-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">AIとERPに関するレポート</h2>
+            
+            <p class="text-lg">社内で検討を開始しているERPシステムについては、やはりAIの導入は不可欠だと考えており、下記にレポートをまとめました。</p>
+            <p class="text-lg mt-4 mb-2">
+                詳しくは<a href="https://gemini.google.com/share/f5ef9b04f552" target="_blank" class="text-blue-600 hover:text-blue-800 underline font-medium transition duration-150">ERP導入について</a>のサイトをご覧ください。
+            </p>
+            <p class="text-sm text-gray-500 italic">このようなまとめ記事も当然AIで検討し作成してもらってます。</p>
+        </section>
+
+
+        <!-- その他画像（スライドショー要素を修正） -->
+        <section class="mt-16 text-center border-t pt-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">全く関係のない画像</h2>
+            
+            <div class="slideshow-container">
+                <img class="mySlides" src="images/matuda2.jpg" alt="風景写真1">
+                <img class="mySlides" src="images/matuda3.jpg" alt="風景写真2">
+                <img class="mySlides" src="images/matuda7.jpg" alt="風景写真3">
+            </div>
+        </section>
+
+        <!-- 小型動画セクション -->
+        <section class="mt-16 text-center border-t pt-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">趣味の紹介</h2>
+            
+            <h3 class="text-xl font-semibold text-gray-700 mt-8">DJ勉強中</h3>
+            <!-- video-smallクラスで最大幅400pxが適用されます -->
+            <video controls class="content-media video-small mx-auto">
+                <source src="kyun.mp4" type="video/mp4">
+                お使いのブラウザは動画タグをサポートしていません。
+            </video>
+                
+            <h3 class="text-xl font-semibold text-gray-700 mt-8">昨日購入したおもちゃ</h3>
+            <!-- video-smallクラスで最大幅400pxが適用されます -->
+            <video controls class="content-media video-small mx-auto">
+                <source src="light.mp4" type="video/mp4">
+                お使いのブラウザは動画タグをサポートしていません。
+            </video>
+        </section>
+        
+        <!-- フッター -->
+        <footer class="mt-20 pt-8 border-t text-center text-sm text-gray-500">
+            <p>こちらは個人的なウェブサイトです。プログラミングはテキトーにしています。</p>
+            <p class="mt-1">ご意見・ご感想はメールで。</p>
+            <p class="mt-2 text-base font-semibold">
+                <a href="mailto:junmmy@me.com" class="text-blue-600 hover:text-blue-800 underline transition duration-150">こちらまで (junmmy@me.com)</a>
+            </p>
+        </footer>
+
     </div>
 
-    <script src="script.js"></script>
-    
-    <h2>社内で検討を開始しているERPシステムについては、やはりAIの導入は不可欠だと考えており</h2>
-    <h2>下記にレポートをまとめました</h2>
-    
-    <p>
-        詳しくは<a href="https://gemini.google.com/share/f5ef9b04f552">ERP導入について</a>のサイトをご覧ください
-    </p>
-
-    <p>このようなまとめ記事も当然AIで検討し作成してもらってます</p>
-
-    <h2>DJ勉強中</h2>
-    <video controls width="800">
-    <source src="kyun.mp4" type="video/mp4">
-    お使いのブラウザは動画タグをサポートしていません。
-</video>
-       
-　　<h2>昨日購入したおもちゃ</h2>
-    <video controls width="800">
-    <source src="light.mp4" type="video/mp4">
-    お使いのブラウザは動画タグをサポートしていません。
-</video>
-
-       
-    <footer>
-       <p>こちらは個人的なウェブサイトです。プログラミングはテキトーにしています。</p>
-　　　　<p>ご意見・ご感想はメールで。</p>
-　　　　<p>
- 　　   <a href="mailto:junmmy@me.com">こちらまで</a>
-　　</p>
-    </footer>
 </body>
 </html>
+
